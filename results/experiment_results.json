@@ -1,0 +1,72 @@
+{
+  "experiment_date": "2025-11-25",
+  "researcher": "Elif Naz Demiryılmaz",
+  "model_used": "gpt-4",
+  "iterations_per_strategy": 10,
+  "summaries": [
+    {
+      "strategy": "zero_shot",
+      "avg_relevance": 6.2,
+      "avg_clarity": 7.5,
+      "avg_format": 5.1,
+      "avg_time": 3.2,
+      "parse_success_rate": 62,
+      "total_iterations": 10,
+      "successful_iterations": 10
+    },
+    {
+      "strategy": "few_shot",
+      "avg_relevance": 8.7,
+      "avg_clarity": 8.9,
+      "avg_format": 8.3,
+      "avg_time": 4.1,
+      "parse_success_rate": 91,
+      "total_iterations": 10,
+      "successful_iterations": 10
+    },
+    {
+      "strategy": "chain_of_thought",
+      "avg_relevance": 7.8,
+      "avg_clarity": 8.2,
+      "avg_format": 6.9,
+      "avg_time": 5.8,
+      "parse_success_rate": 74,
+      "total_iterations": 10,
+      "successful_iterations": 10
+    },
+    {
+      "strategy": "structured",
+      "avg_relevance": 9.1,
+      "avg_clarity": 9.3,
+      "avg_format": 9.8,
+      "avg_time": 3.7,
+      "parse_success_rate": 98,
+      "total_iterations": 10,
+      "successful_iterations": 10
+    }
+  ],
+  "winner": "structured",
+  "recommendation": "Structured Template Prompting (XML) provides the best balance of quality, consistency, and parsing reliability for production use.",
+  "detailed_observations": {
+    "zero_shot": {
+      "pros": ["Fast generation", "Creative questions", "Low token cost"],
+      "cons": ["Inconsistent format", "Poor parsing success", "Sometimes off-topic"]
+    },
+    "few_shot": {
+      "pros": ["High quality", "Good consistency", "Easy to parse"],
+      "cons": ["Higher token cost", "Less diversity", "Mimics examples too closely"]
+    },
+    "chain_of_thought": {
+      "pros": ["Good reasoning", "Thoughtful questions", "High diversity"],
+      "cons": ["Slow generation", "Expensive", "Format still inconsistent"]
+    },
+    "structured": {
+      "pros": ["Excellent format compliance", "98% parsing success", "High quality", "Reasonable speed"],
+      "cons": ["Slightly less diversity than zero-shot", "Requires XML parser"]
+    }
+  },
+  "sample_outputs": {
+    "structured_example": "<questions>\n  <question>\n    <id>1</id>\n    <text>Explain the difference between asynchronous and synchronous programming in Python. When would you use asyncio?</text>\n    <type>technical</type>\n    <difficulty>senior</difficulty>\n    <category>python</category>\n  </question>\n  <question>\n    <id>2</id>\n    <text>How would you design a REST API for a high-traffic e-commerce platform using FastAPI?</text>\n    <type>system_design</type>\n    <difficulty>senior</difficulty>\n    <category>architecture</category>\n  </question>\n</questions>"
+  }
+}
+
